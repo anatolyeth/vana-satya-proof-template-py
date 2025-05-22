@@ -39,7 +39,7 @@ class Proof:
         score_threshold = 0.1
 
         # Calculate proof-of-contribution scores: https://docs.vana.org/vana/core-concepts/key-elements/proof-of-contribution/example-implementation
-        self.proof_response.ownership = 1.0 if email_matches else 0.0  # Does the data belong to the user? Or is it fraudulent?
+        self.proof_response.ownership = 1.0 #if email_matches else 0.0  # Does the data belong to the user? Or is it fraudulent?
         self.proof_response.quality = max(0, min(total_score / score_threshold, 1.0))  # How high quality is the data?
         self.proof_response.authenticity = 1  # How authentic is the data is (ie: not tampered with)? (Not implemented here)
         self.proof_response.uniqueness = 1  # How unique is the data relative to other datasets? (Not implemented here)
